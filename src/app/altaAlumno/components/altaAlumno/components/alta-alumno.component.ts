@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ALUMN_ERRORS } from 'src/app/utils/alumn.errors';
 import { GENERAL_ERRORS } from 'src/app/utils/general.errors';
 
@@ -18,7 +18,7 @@ export class AltaAlumnoComponent implements OnInit {
     lastName2: new FormControl(''),
     email: new FormControl(''),
     dni: new FormControl(''),
-    phone1: new FormControl(''),
+    phone: new FormControl(''),
     phone2: new FormControl(''),
     country: new FormControl(''),
     province: new FormControl(''),
@@ -29,7 +29,24 @@ export class AltaAlumnoComponent implements OnInit {
     confirmPassword: new FormControl('')
   });
 
-  constructor() {}
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.registerForm = formBuilder.group({
+      name: ['', Validators.required],
+      lastName1: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
+      dni: ['', Validators.required],
+      phone: ['', Validators.required],
+      country:['',Validators.required],
+      province:['',Validators.required],
+      postalCode:['',Validators.required],
+      town:['',Validators.required],
+      nickname:['',Validators.required],
+      password:['',Validators.required, Validators.minLength(6)],
+      confirmPassword:['',Validators.required, Validators.minLength(6)],
+    })
+  }
 
   ngOnInit(): void {}
 

@@ -3,42 +3,42 @@
   <form [formGroup]="registerForm">
     <mat-form-field appearance="outline">
       <mat-label>Nombre</mat-label>
-      <input matInput type="text" placeholder="Nombre" formControlName="name" required>
+      <input matInput type="text" placeholder="Nombre" formControlName="name" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Apellido 1</mat-label>
-      <input matInput type="text" placeholder="Apellido 1" formControlName="lastName1" required>
+      <input matInput type="text" placeholder="Apellido 1" formControlName="lastName1" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Apellido 2</mat-label>
-      <input matInput type="text" placeholder="Apellido 2" formControlName="lastName2">
+      <input matInput type="text" placeholder="Apellido 2" formControlName="lastName2" ngModel>
       <mat-hint>Opcional</mat-hint>
     </mat-form-field>
     <p></p>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput type="text" placeholder="Email" formControlName="email" required>
+      <input matInput type="text" placeholder="Email" formControlName="email" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>DNI</mat-label>
-      <input matInput type="text" placeholder="DNI" formControlName="dni" required>
+      <input matInput type="text" placeholder="DNI" formControlName="dni" ngModel required>
     </mat-form-field>
     <p></p>
     <mat-form-field appearance="outline">
       <mat-label>Teléfono móvil</mat-label>
-      <input matInput type="text" placeholder="Teléfono móvil" formControlName="phone1" required>
+      <input matInput type="text" placeholder="Teléfono móvil" formControlName="phone" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Otro teléfono</mat-label>
-      <input matInput type="text" placeholder="Teléfono 2" formControlName="phone2">
+      <input matInput type="text" placeholder="Teléfono 2" formControlName="phone2" ngModel>
       <mat-hint>Opcional</mat-hint>
     </mat-form-field>
     <p></p>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" ngModel>
       <mat-label>País</mat-label>
       <select name="country" formControlName="country">
         <option value="">Seleccion un país</option>
@@ -277,7 +277,7 @@
       </select>
     </mat-form-field>
     <p></p>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" ngModel>
       <mat-label>Provincia</mat-label>
       <ng-container *ngIf="registerForm.get('country')?.value !== 'España'; else provinceList">
         <input matInput placeholder="Provincia" formControlName="province">
@@ -345,27 +345,27 @@
     <p></p>
     <mat-form-field appearance="outline">
       <mat-label>Código postal</mat-label>
-      <input matInput type="text" placeholder="Código postal" formControlName="postalCode" required>
+      <input matInput type="text" placeholder="Código postal" formControlName="postalCode" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Localidad</mat-label>
-      <input matInput type="text" placeholder="Localidad" formControlName="town" required>
+      <input matInput type="text" placeholder="Localidad" formControlName="town" ngModel required>
     </mat-form-field>
     <p></p>
     <mat-form-field appearance="outline">
       <mat-label>Nickname</mat-label>
-      <input type="text" matInput placeholder="Nickname" formControlName="nickname" required>
+      <input type="text" matInput placeholder="Nickname" formControlName="nickname" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Contraseña</mat-label>
-      <input matInput type="password" placeholder="Contraseña" formControlName="password" required>
+      <input matInput type="password" placeholder="Contraseña" formControlName="password" ngModel required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Repite tu contraseña</mat-label>
-      <input matInput type="password" placeholder="Repite la contraseña" formControlName="confirmPassword" required>
+      <input matInput type="password" placeholder="Repite la contraseña" formControlName="confirmPassword" ngModel required>
     </mat-form-field>
     <p></p>
     <button mat-raised-button color="accent" [disabled]="!registerForm.valid">Aceptar</button>
