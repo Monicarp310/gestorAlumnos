@@ -26,6 +26,7 @@ export class AltaAlumnoComponent implements OnInit {
     town: new FormControl(''),
     nickname: new FormControl(''),
     password: new FormControl(''),
+    confirmPassword: new FormControl('')
   });
 
   constructor() {}
