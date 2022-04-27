@@ -1,6 +1,5 @@
 import { ALUMN_CONTANTS } from "./alumnConstants";
 
-
 export const ALUMN_ERRORS = {
   name: {
     notProvided: 'No se ha adjuntado un nombre',

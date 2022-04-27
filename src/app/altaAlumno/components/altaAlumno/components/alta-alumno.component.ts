@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ALUMN_ERRORS } from 'src/app/utils/alumn.errors';
-import { GENERAL_ERRORS } from 'src/app/utils/general.errors';
+import { ALUMN_ERRORS } from 'src/app/utils/errors/alumn.errors';
+import { GENERAL_ERRORS } from 'src/app/utils/errors/general.errors';
 
 @Component({
   selector: 'app-alta-alumno',
