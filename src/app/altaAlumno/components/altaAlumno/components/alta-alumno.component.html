@@ -38,22 +38,24 @@
       <mat-hint>Opcional</mat-hint>
     </mat-form-field>
     <p></p>
-    <mat-form-field appearance="outline" ngModel>
+    <mat-form-field appearance="outline">
       <mat-label>País</mat-label>
-      <select name="country" formControlName="country">
-        COUNTRIES
-      </select>
+      <mat-select name="country" formControlName="country" ngModel>
+        <mat-option *ngFor="let country of countries" value="country.name">
+          {{country.name}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <p></p>
-    <mat-form-field appearance="outline" ngModel>
+    <mat-form-field appearance="outline">
       <mat-label>Provincia</mat-label>
       <ng-container *ngIf="registerForm.get('country')?.value !== 'España'; else provinceList">
-        <input matInput placeholder="Provincia" formControlName="province">
+        <input matInput placeholder="Provincia" formControlName="province" ngModel>
       </ng-container>
       <ng-template #provinceList>
-        <mat-select name="province" formControlName="province" required>
-          <mat-option>
-            PROVINCES
+        <mat-select name="province" formControlName="province" ngModel required>
+          <mat-option *ngFor="let province of provinces" value="province.name">
+            {{province.name}}
           </mat-option>
         </mat-select>
       </ng-template>
@@ -81,7 +83,8 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Repite tu contraseña</mat-label>
-      <input matInput type="password" placeholder="Repite la contraseña" formControlName="confirmPassword" ngModel required>
+      <input matInput type="password" placeholder="Repite la contraseña" formControlName="confirmPassword" ngModel
+        required>
     </mat-form-field>
     <p></p>
     <button mat-raised-button color="accent" [disabled]="!registerForm.valid">Aceptar</button>

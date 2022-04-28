@@ -1,3 +1,7 @@
+import { countries } from './../../../../utils/data/countries';
+import { Countries } from './../../../../utils/modals/country.model';
+import { Provinces } from './../../../../utils/modals/provinces.model';
+import { provinces } from './../../../../utils/data/provinces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ALUMN_ERRORS } from 'src/app/utils/errors/alumn.errors';
@@ -11,6 +15,9 @@ import { GENERAL_ERRORS } from 'src/app/utils/errors/general.errors';
 export class AltaAlumnoComponent implements OnInit {
   readonly GENERAL_ERRORS = GENERAL_ERRORS;
   readonly ALUMN_ERRORS = ALUMN_ERRORS;
+
+  public provinces: Provinces[] = provinces;
+  public countries: Countries[] = countries;
 
   registerForm = new FormGroup({
     name: new FormControl(''),

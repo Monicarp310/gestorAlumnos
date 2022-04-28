@@ -1,3 +1,4 @@
+import { EncryptionService } from './utils/services/encryption.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +28,7 @@ import { AppComponent } from './app.component';
     MatDialogModule
 
   ],
-  providers: [],
+  providers: [EncryptionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
