@@ -42,22 +42,24 @@ export class AltaAlumnoComponent implements OnInit {
     this.registerForm = formBuilder.group({
       name: ['', Validators.required],
       lastName1: ['', Validators.required],
+      lastName2: [''],
       email: ['', Validators.required, Validators.email],
       dni: ['', Validators.required],
       phone: ['', Validators.required],
-      country:['',Validators.required],
-      province:['',Validators.required],
-      postalCode:['',Validators.required],
-      town:['',Validators.required],
-      nickname:['',Validators.required],
-      password:['',Validators.required, Validators.minLength(6)],
-      confirmPassword:['',Validators.required, Validators.minLength(6)],
+      phone2: [''],
+      country: ['', Validators.required],
+      province: ['', Validators.required],
+      postalCode: ['', Validators.required],
+      town: ['', Validators.required],
+      nickname: ['', Validators.required],
+      password: ['', Validators.required, Validators.minLength(6)],
+      confirmPassword: ['', Validators.required, Validators.minLength(6)],
     })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.registerForm.value);
   }
 }
