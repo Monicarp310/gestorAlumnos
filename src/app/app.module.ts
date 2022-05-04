@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule, MatInputModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { AltaAlumnoComponent } from './altaAlumno/components/altaAlumno/components/alta-alumno.component';
@@ -26,11 +26,9 @@ import { EncryptionService } from './utils/services/encryption.service';
     MatSelectModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
   ],
   exports: [
-    MatInputModule
-  ]
+  ],
   providers: [EncryptionService],
   bootstrap: [AppComponent]
 })
